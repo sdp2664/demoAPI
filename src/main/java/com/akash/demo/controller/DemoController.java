@@ -1,25 +1,38 @@
 package com.akash.demo.controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.akash.demo.dto.InputDTO;
+import com.akash.demo.dto.OutputDTO;
+
+import lombok.extern.java.Log;
+
+
+
 @RestController
-//@RequestMapping("/api/v1")
 public class DemoController {
 
-	@PostMapping(path="/api/v1/{n1}/{n2}")
-	public double calculate(@PathVariable double n1, @PathVariable double n2)
+	OutputDTO outputDTO = new OutputDTO();
+	
+	@PostMapping(path="/api/v1/")
+	public OutputDTO calculate(@RequestBody InputDTO inputDTO)
 	{
-		double result;
-		if(n1<n2)
+		double num1 = inputDTO.getN1();
+		double num2 = inputDTO.getN2();
+		
+		outputDTO.setN1(num1);
+		outputDTO.setN2(num2);
+		
+		if(num1<num2)
 		{
-			result = n2 * 30000/3.1415;
+			outputDTO.setResult(num2 * 30000 / 3.1415);
 		}
 		else
-			result = n1 * 30000/3.1415;
-		
-		return result;
+		{
+			outputDTO.setResult(num1 * 30000 / 3.1415);
+		}
+		return outputDTO;
 	}
 }
