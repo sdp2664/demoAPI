@@ -14,8 +14,8 @@ public class DemoController {
 	
 	@Autowired
 	CalculateNumbersService calculateNumbersService;
-	
-	OutputDTO outputDTO = new OutputDTO();
+
+  OutputDTO outputDTO = new OutputDTO();
 	
 	@PostMapping(path="/api/v1/")
 	public OutputDTO calculate(@RequestBody InputDTO inputDTO)

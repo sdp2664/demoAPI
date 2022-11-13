@@ -15,4 +15,5 @@ public class InputDTO {
 	@JsonProperty("num2")
 	private double num2;
 
+
 }
