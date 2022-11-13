@@ -7,13 +7,8 @@ import org.junit.jupiter.api.Test;
 class DemoControllerTest {
 
 	@Test
-	void testCalculateNum1Greater() {
-		//given
-		double num1 = 32.33;
-		double num2 = 25.805;
-		//when
-		
-		//then
+	void test() {
+		fail("Not yet implemented");
 	}
 
 }
