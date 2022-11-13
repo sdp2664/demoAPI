@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OutputDTO {
 	
-	@JsonProperty("n1")
-	private double n1;
+	@JsonProperty("num1")
+	private double num1;
 	
-	@JsonProperty("n2")
-	private double n2;
+	@JsonProperty("num2")
+	private double num2;
 
 	@JsonProperty("result")
-	private double result;
+	private String result;
 
 }
